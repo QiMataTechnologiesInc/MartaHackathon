@@ -1,0 +1,13 @@
+﻿@section scripts{
+    <script type="text/javascript" src="/Scripts/jquery.signalR-2.2.1.min.js"></script>
+    <script type="text/javascript" src="/signalr/hubs"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.connection.beaconDataHub.client.incomingData = function (x) {
+                console.log(JSON.stringify(x));
+            };
+            $.connection.hub.start().done(function() {
+            });
+        });
+    </script>
+}

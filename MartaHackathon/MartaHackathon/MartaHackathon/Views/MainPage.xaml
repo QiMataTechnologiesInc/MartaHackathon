@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MartaHackathon"
+             x:Class="MartaHackathon.MainPage"
+             BindingContext="{Binding Source={StaticResource ViewModelLocator},Path=MainViewModel}"
+             Title="Marta Hackathon!">
+  <StackLayout>
+    <ContentView Padding="0,10,0,0">
+      <Label Text="Station: The Garage"  HorizontalOptions="CenterAndExpand"></Label>
+    </ContentView>
+    <Label Text="{Binding DisplayText}"
+              VerticalOptions="CenterAndExpand"
+              HorizontalOptions="CenterAndExpand" />
+    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+      <Button Text="More Info" HorizontalOptions="CenterAndExpand" 
+              TextColor="{StaticResource MartaBlue}" Margin="5"
+              Command="{Binding MoreInfoTappedCommand}"></Button>
+      <ContentView WidthRequest="40"></ContentView>
+      <Button Text="Help" HorizontalOptions="CenterAndExpand" 
+              TextColor="{StaticResource MartaBlue}" Margin="5"
+              Command="{Binding HelpTappedCommand}"></Button>
+    </StackLayout>
+    <ContentView HeightRequest="40"></ContentView>
+  </StackLayout>
+</ContentPage>
